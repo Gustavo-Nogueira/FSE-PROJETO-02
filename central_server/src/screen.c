@@ -24,8 +24,6 @@
 #define LOGS_WD_WIDTH 0.5
 #define LOGS_WD_HEIGHT 0.75
 
-#define SIZEOF_OPTION_LIST(L) (sizeof(L) / sizeof(MENU_OPTION))
-
 typedef struct {
     void *arg;
     void (*handler)(void *arg);
@@ -151,11 +149,12 @@ static void handle_press_command_panel(void *arg) {
     int y_offset = app_lines * STATE_WD_HEIGHT;
     int box_cols = app_cols * MENU_WD_WIDTH;
     int box_lines = app_lines * MENU_WD_HEIGHT;
+    SYSTEM_STATE *sysstate = get_system_state();
 
     for (int i = 0; i < N_DISTR_SERVERS; i++) {
         if (command_panels[i].server_id == server_id) {
             draw_selection_box(box_lines - 2, box_cols - 2, y_offset + 1, x_offset + 1,
-                               "Painel de comando", command_panels[i].options, SIZEOF_OPTION_LIST(command_panels[i].options), 1);
+                               "Painel de comando", command_panels[i].options, sysstate->distr_servers[i].size_outputs, 0);
             break;
         }
     }
@@ -277,9 +276,10 @@ void draw_menu(WINDOW *_wdw) {
     wattroff(_wdw, A_BOLD);
     refresh_window(_wdw);
 
+    int menu_sz = N_DISTR_SERVERS * 2 + 2;
     while (1) {
         draw_selection_box(box_lines - 2, box_cols - 2, y_offset + 1, x_offset + 1,
-                           "Menu Principal", main_menu_opts, SIZEOF_OPTION_LIST(main_menu_opts), 1);
+                           "Menu Principal", main_menu_opts, menu_sz, 0);
     }
 }
 
