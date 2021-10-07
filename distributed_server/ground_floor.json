@@ -1,0 +1,76 @@
+{
+    "server_id": 0,
+    "name": "Térreo",
+    "address": {
+      "ip": "192.168.0.52",
+      "port": 4202
+    },
+    "central_server": {
+      "ip": "192.168.0.53",
+      "port": 1000
+    },
+    "outputs": [
+      {
+        "type": 6,
+        "tag": "Lâmpada da Sala T01",
+        "gpio": 4
+      },
+      {
+        "type": 6,
+        "tag": "Lâmpada da Sala T02",
+        "gpio": 17
+      },
+      {
+        "type": 6,
+        "tag": "Lâmpadas do Corredor Terreo",
+        "gpio": 27
+      },
+      {
+        "type": 7,
+        "tag": "Ar-Condicionado Terreo",
+        "gpio": 7
+      },
+      {
+        "type": 8,
+        "tag": "Aspersor de Água (Incêndio)",
+        "gpio": 16
+      }
+    ],
+    "inputs": [
+      {
+        "type": 1,
+        "tag": "Sensor de Presença",
+        "gpio": 26
+      },
+      {
+        "type": 5,
+        "tag": "Sensor de Fumaça",
+        "gpio": 23
+      },
+      {
+        "type": 2,
+        "tag": "Sensor de Janela T01",
+        "gpio": 9
+      },
+      {
+        "type": 2,
+        "tag": "Sensor de Janela T02",
+        "gpio": 11
+      },
+      {
+        "type": 3,
+        "tag": "Sensor de Porta Entrada",
+        "gpio": 10
+      },
+      {
+        "type": 4,
+        "tag": "Sensor de Contagem de Pessoas Entrando no Prédio",
+        "gpio": 13
+      },
+      {
+        "type": 4,
+        "tag": "Sensor de Contagem de Pessoas Saindo do Prédio",
+        "gpio": 19
+      }
+    ]
+}

@@ -1,0 +1,56 @@
+{
+    "server_id": 1,
+    "name": "1º Andar",
+    "address": {
+      "ip": "192.168.0.52",
+      "port": 4201
+    },
+    "central_server": {
+      "ip": "192.168.0.53",
+      "port": 1000
+    },
+    "outputs": [
+      {
+        "type": 6,
+        "tag": "Lâmpada da Sala 101",
+        "gpio": 22
+      },
+      {
+        "type": 6,
+        "tag": "Lâmpada da Sala 102",
+        "gpio": 25
+      },
+      {
+        "type": 6,
+        "tag": "Lâmpadas do Corredor",
+        "gpio": 8
+      },
+      {
+        "type": 7,
+        "tag": "Ar-Condicionado (1º Andar)",
+        "gpio": 12
+      }
+    ],
+    "inputs": [
+      {
+        "type": 1,
+        "tag": "Sensor de Presença",
+        "gpio": 18
+      },
+      {
+        "type": 5,
+        "tag": "Sensor de Fumaça",
+        "gpio": 24
+      },
+      {
+        "type": 2,
+        "tag": "Sensor de Janela 101",
+        "gpio": 5
+      },
+      {
+        "type": 2,
+        "tag": "Sensor de Janela 102",
+        "gpio": 6
+      }
+    ]
+}
