@@ -3,7 +3,7 @@
     "name": "1º Andar",
     "address": {
       "ip": "192.168.0.52",
-      "port": 4201
+      "port": 4241
     },
     "central_server": {
       "ip": "192.168.0.53",

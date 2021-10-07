@@ -1,6 +1,9 @@
 #ifndef DEFINITIONS_H_
 #define DEFINITIONS_H_
 
+#define MIN(a, b) (((a) < (b)) ? (a) : (b))
+#define MAX(a, b) (((a) > (b)) ? (a) : (b))
+
 // COMMANDS
 #define CMD_PUSH_NOTIFICATION 1
 #define CMD_SET_SERVER_CONFIGS 2

@@ -277,8 +277,6 @@ void draw_menu(WINDOW *_wdw) {
     wattroff(_wdw, A_BOLD);
     refresh_window(_wdw);
 
-    int opt, res;
-    char buff[1000];
     while (1) {
         draw_selection_box(box_lines - 2, box_cols - 2, y_offset + 1, x_offset + 1,
                            "Menu Principal", main_menu_opts, SIZEOF_OPTION_LIST(main_menu_opts), 1);
@@ -320,7 +318,7 @@ void draw_system_state(WINDOW *_wdw) {
     py = (box_cols / 4) * 2 + ((box_cols / 4) / 2) - (strlen(tmp) / 2);
     mvwprintw(_wdw, px, py, tmp);
 
-    sprintf(tmp, "OCUPACAO: %.2lf", sysstate->occupation);
+    sprintf(tmp, "OCUPACAO: %d", sysstate->occupation);
     px = start_y;
     py = (box_cols / 4) * 3 + ((box_cols / 4) / 2) - (strlen(tmp) / 2);
     mvwprintw(_wdw, px, py, tmp);
@@ -344,17 +342,17 @@ void draw_system_state(WINDOW *_wdw) {
     py = (box_cols / 2) + ((box_cols / 2) / 2) - (strlen(tmp) / 2);
     mvwprintw(_wdw, px, py, tmp);
 
-    int mxsize = max(sysstate->distr_servers[sindex].size_inputs, sysstate->distr_servers[sindex].size_outputs);
+    int mxsize = MAX(sysstate->distr_servers[sindex].size_inputs, sysstate->distr_servers[sindex].size_outputs);
     for (int i = 0; i < mxsize; i++) {
         if (i < sysstate->distr_servers[sindex].size_inputs) {
-            sprintf(tmp, "%s: %d", sysstate->distr_servers[sindex].inputs[i].tag,
+            sprintf(tmp, "%s: %s", sysstate->distr_servers[sindex].inputs[i].tag,
                     sysstate->distr_servers[sindex].inputs[i].current_value ? "On" : "Off");
             px = start_y + i + 2;
             py = ((box_cols / 2) / 2) - (strlen(tmp) / 2);
             mvwprintw(_wdw, px, py, tmp);
         }
         if (i < sysstate->distr_servers[sindex].size_outputs) {
-            sprintf(tmp, "%s: %d", sysstate->distr_servers[sindex].outputs[i].tag,
+            sprintf(tmp, "%s: %s", sysstate->distr_servers[sindex].outputs[i].tag,
                     sysstate->distr_servers[sindex].outputs[i].current_value ? "On" : "Off");
             px = start_y + i + 2;
             py = (box_cols / 2) + ((box_cols / 2) / 2) - (strlen(tmp) / 2);
